@@ -1,0 +1,3 @@
+const SKUS = ["MAQ100106-002", "SEG020106-001", "MAQ0054", "MAQ0057", "MAQ0060", "MAQ0021"];
+
+export default SKUS;
