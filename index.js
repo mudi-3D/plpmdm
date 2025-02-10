@@ -154,8 +154,7 @@ const searchCards = () => {
 
     if (counterSearch === 1000) return;
 
-    const allCards = document.querySelectorAll('.product-element-top')
-
+    const allCards = document.querySelectorAll('.product_type_simple')
 
     if (allCards.length == 0) {
         counterSearch++;
@@ -168,21 +167,22 @@ const searchCards = () => {
 
     for (let i = 0; i < allCards.length; i++) {
 
-        let numberSKu = document.querySelector(`#id`);
+
+        let numberSKu = allCards[i].getAttribute(`id`);
+
 
         if (SKUS.includes(numberSKu)) {
+
             /** Contenido de la imagen icono identificador 3D  */
             let ImageElement = document.createElement('DIV');
             ImageElement.classList.add('icon3DPLP');
             ImageElement.addEventListener('click', () => { createModal(numberSKu) })
-            const father = allCards[i];
+            const father = allCards[i].parentNode.parentNode.parentNode;
             father.appendChild(ImageElement);
         }
 
     };
 
-
 };
 
 searchCards();
-console.log('probando PLP latest')
